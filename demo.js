@@ -127,6 +127,19 @@ window.onload = function() {
 
   // .. and render it
   r.render();
+  
+  
+   // create the 2D renderers
+  // .. for the X orientation
+  sliceX = new X.renderer2D();
+  sliceX.container = 'sliceX';
+  sliceX.orientation = 'X';
+  sliceX.init();
+  
+  sliceX.add(v);
+  
+  // start the loading/rendering
+  
 
   r.onShowtime = function() {
 
@@ -139,6 +152,7 @@ window.onload = function() {
     v.maxColor = [0.5843137254901961, 1, 0];
     v.opacity = 0.2;
 
+    sliceX.render();
   };
 
   volume = v;
